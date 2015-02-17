@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=1:00:00
+#PBS -l mem=2GB
+#PBS -N matlab-test
+#PBS -M YOURUSERNAME@nyu.edu
+#PBS -j oe
+
+module load matlab/2014a
+
+cd /scratch/YOURUSERNAME/hpcdemo
+
+matlab -nodisplay -r "matlabtest; exit()"
+
+exit
